@@ -6,8 +6,8 @@
 */
 const API_BASE_URL = window.RURAL_CONNECT_API_URL ||
   (window.location.protocol === 'http:' || window.location.protocol === 'https:'
-    ? (window.location.port === '5000' ? '/api' : 'http://localhost:5000/api')
-    : 'http://localhost:5000/api');
+    ? (window.location.port === '5000' ? '/api' : 'https://ruralconnect-ai-backend.onrender.com/api')
+    : 'https://ruralconnect-ai-backend.onrender.com/api');
 
 const STORAGE_KEYS = { TOKEN:'rc_token', USER:'rc_user' };
 
