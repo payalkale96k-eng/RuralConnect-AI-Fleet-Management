@@ -1,0 +1,137 @@
+/* Rural Connect AI + language controls — visual redesign only */
+.rc-language-control {
+  position: fixed;
+  top: 82px;
+  right: 18px;
+  z-index: 1040;
+  background: rgba(255,255,255,.96);
+  border: 1px solid #dfe8e1;
+  padding: 7px 9px 7px 12px;
+  border-radius: 999px;
+  box-shadow: 0 8px 26px rgba(18,61,36,.12);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 13px;
+  backdrop-filter: blur(10px);
+}
+.rc-language-control label { font-weight: 700; margin: 0; color: #244a35; }
+.rc-language-control select {
+  border: 0;
+  outline: 0;
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: #edf7ef;
+  color: #175b35;
+  font-weight: 700;
+  cursor: pointer;
+}
+.rc-chatbot { font-family: inherit; }
+.rc-chat-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 62px;
+  height: 62px;
+  border: 3px solid rgba(255,255,255,.9);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f7041, #123d24);
+  color: #fff;
+  font-size: 26px;
+  box-shadow: 0 12px 30px rgba(11,47,27,.27);
+  z-index: 1050;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.rc-chat-toggle:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 34px rgba(11,47,27,.32); }
+.rc-chat-panel {
+  display: none;
+  position: fixed;
+  right: 22px;
+  bottom: 98px;
+  width: min(390px, calc(100vw - 30px));
+  height: 540px;
+  background: #fff;
+  border: 1px solid #dfe8e1;
+  border-radius: 22px;
+  box-shadow: 0 20px 60px rgba(11,47,27,.22);
+  overflow: hidden;
+  z-index: 1050;
+  flex-direction: column;
+}
+.rc-chat-panel.open { display: flex; animation: rcChatIn .18s ease-out; }
+@keyframes rcChatIn { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+.rc-chat-header {
+  background: linear-gradient(135deg, #123d24, #1f7041);
+  color: #fff;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rc-chat-header strong { display: block; font-size: 1rem; }
+.rc-chat-header small { opacity: .76; font-size: .76rem; }
+.rc-chat-header button {
+  width: 34px;
+  height: 34px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.rc-chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f4f8f5;
+}
+.rc-msg {
+  max-width: 88%;
+  padding: 11px 13px;
+  border-radius: 15px;
+  margin: 9px 0;
+  white-space: pre-wrap;
+  line-height: 1.45;
+  font-size: .92rem;
+  box-shadow: 0 2px 7px rgba(18,61,36,.05);
+}
+.rc-msg.bot { background: #fff; border: 1px solid #dfe8e1; margin-right: auto; border-bottom-left-radius: 5px; }
+.rc-msg.user { background: #1f7041; color: #fff; margin-left: auto; border-bottom-right-radius: 5px; }
+.rc-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 11px;
+  border-top: 1px solid #e5ece6;
+  background: #fff;
+}
+.rc-chat-form textarea {
+  flex: 1;
+  resize: none;
+  min-height: 46px;
+  max-height: 100px;
+  border: 1px solid #cfdad1;
+  border-radius: 13px;
+  padding: 10px 11px;
+  font: inherit;
+  outline: none;
+}
+.rc-chat-form button {
+  min-width: 76px;
+  border: 0;
+  border-radius: 12px;
+  background: #1f7041;
+  color: #fff;
+  padding: 0 14px;
+  font-weight: 750;
+  cursor: pointer;
+}
+.rc-chat-form button:hover { background: #123d24; }
+@media (max-width: 600px) {
+  .rc-language-control { top: 72px; right: 10px; }
+  .rc-chat-toggle { right: 14px; bottom: 14px; width: 58px; height: 58px; }
+  .rc-chat-panel { right: 10px; bottom: 82px; width: calc(100vw - 20px); height: min(72vh, 560px); border-radius: 18px; }
+  .rc-language-control label { display: none; }
+}

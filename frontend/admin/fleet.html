@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n-title="fleetManagement">Fleet Management – Rural Connect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/chatbot.css">
+</head>
+<body class="admin-shell">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">Rural Connect</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fleetNav" aria-controls="fleetNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="fleetNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="admin-dashboard.html" data-i18n="dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link active" href="fleet.html" data-i18n="fleetManagement">Fleet Management</a></li>
+        <li class="nav-item"><a class="nav-link" href="complaints.html">Complaints</a></li>
+      </ul>
+      <ul class="navbar-nav" id="auth-nav-links"></ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container fleet-page">
+  <div class="fleet-heading">
+    <div>
+      <span class="rc-section-kicker">RURAL OPERATIONS</span>
+      <h1 class="section-title mb-2" data-i18n="fleetManagement">Fleet Management</h1>
+      <p class="lead mb-0">Manage service vehicles, drivers, trips and maintenance from one place.</p>
+    </div>
+    <button class="btn btn-primary-rural" id="addVehicleBtn" data-i18n="addVehicle">Add Vehicle</button>
+  </div>
+
+  <section class="fleet-stat-grid" aria-label="Fleet summary">
+    <article class="fleet-stat"><span class="fleet-stat-icon">▣</span><div><small data-i18n="totalVehicles">Total Vehicles</small><strong id="totalVehicles">0</strong></div></article>
+    <article class="fleet-stat"><span class="fleet-stat-icon">✓</span><div><small data-i18n="availableVehicles">Available Vehicles</small><strong id="availableVehicles">0</strong></div></article>
+    <article class="fleet-stat"><span class="fleet-stat-icon">→</span><div><small data-i18n="onTripVehicles">On Trip</small><strong id="onTripVehicles">0</strong></div></article>
+    <article class="fleet-stat"><span class="fleet-stat-icon">⚙</span><div><small data-i18n="maintenanceVehicles">Maintenance</small><strong id="maintenanceVehicles">0</strong></div></article>
+    <article class="fleet-stat"><span class="fleet-stat-icon">♙</span><div><small data-i18n="activeDrivers">Active Drivers</small><strong id="activeDrivers">0</strong></div></article>
+    <article class="fleet-stat"><span class="fleet-stat-icon">◷</span><div><small data-i18n="activeTrips">Active Trips</small><strong id="activeTrips">0</strong></div></article>
+  </section>
+
+  <section class="card fleet-panel">
+    <div class="card-body">
+      <div class="fleet-toolbar">
+        <div>
+          <h2 class="h5 mb-1" data-i18n="vehicles">Vehicles</h2>
+          <p class="text-muted mb-0">Keep vehicle assignments and operational status up to date.</p>
+        </div>
+        <div class="fleet-filters">
+          <input id="vehicleSearch" class="form-control" type="search" placeholder="Search vehicles..." aria-label="Search vehicles">
+          <select id="statusFilter" class="form-select" aria-label="Filter by status">
+            <option value="">All Status</option>
+            <option value="Available">Available</option>
+            <option value="On Trip">On Trip</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-responsive fleet-table-wrap">
+        <table class="table align-middle mb-0">
+          <thead><tr><th data-i18n="vehicleNumber">Vehicle Number</th><th data-i18n="vehicleType">Vehicle Type</th><th data-i18n="vehicleModel">Vehicle Model</th><th data-i18n="driver">Driver</th><th data-i18n="location">Location</th><th data-i18n="status">Status</th><th class="text-end">Actions</th></tr></thead>
+          <tbody id="vehiclesBody"><tr><td colspan="7" class="text-center text-muted py-5">Loading fleet...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card fleet-panel mt-4"><div class="card-body"><div class="fleet-card-head"><div><span class="rc-section-kicker">USER REQUESTS</span><h2 class="h5 mb-0" data-i18n="manageBookings">Manage Bookings</h2></div><span id="bookingCount" class="badge rounded-pill bg-light text-dark">0</span></div><div class="table-responsive mt-3"><table class="table align-middle mb-0"><thead><tr><th>User</th><th>Vehicle</th><th>Date</th><th>Purpose</th><th>Status</th><th class="text-end">Actions</th></tr></thead><tbody id="bookingsBody"><tr><td colspan="6" class="text-muted text-center py-4">Loading bookings...</td></tr></tbody></table></div></div></section>
+
+<section class="fleet-secondary-grid">
+    <article class="card"><div class="card-body"><div class="fleet-card-head"><h2 class="h5 mb-0" data-i18n="drivers">Drivers</h2><span id="driverCount" class="badge rounded-pill bg-light text-dark">0</span></div><div id="driversList" class="fleet-mini-list"><span class="text-muted">Loading...</span></div></div></article>
+    <article class="card"><div class="card-body"><div class="fleet-card-head"><h2 class="h5 mb-0" data-i18n="trips">Trips</h2><span id="tripCount" class="badge rounded-pill bg-light text-dark">0</span></div><div id="tripsList" class="fleet-mini-list"><span class="text-muted">Loading...</span></div></div></article>
+    <article class="card"><div class="card-body"><div class="fleet-card-head"><h2 class="h5 mb-0" data-i18n="maintenance">Maintenance</h2><span id="maintenanceCount" class="badge rounded-pill bg-light text-dark">0</span></div><div id="maintenanceList" class="fleet-mini-list"><span class="text-muted">Loading...</span></div></div></article>
+  </section>
+</main>
+
+<div class="modal fade" id="vehicleModal" tabindex="-1" aria-labelledby="vehicleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content fleet-modal">
+    <div class="modal-header"><div><span class="rc-section-kicker">FLEET</span><h2 class="modal-title h5 mb-0" id="vehicleModalLabel">Add Vehicle</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <form id="vehicleForm"><div class="modal-body"><input type="hidden" id="vehicleId">
+      <div class="row g-3">
+        <div class="col-md-6"><label class="form-label" for="vehicleNumber" data-i18n="vehicleNumber">Vehicle Number</label><input class="form-control" id="vehicleNumber" required placeholder="MH15AB1234"></div>
+        <div class="col-md-6"><label class="form-label" for="vehicleType" data-i18n="vehicleType">Vehicle Type</label><select class="form-select" id="vehicleType" required><option value="">Select type</option><option>Service Van</option><option>Agriculture Support</option><option>Water Tanker</option><option>Ambulance</option><option>Utility Vehicle</option><option>Other</option></select></div>
+        <div class="col-md-6"><label class="form-label" for="vehicleModel" data-i18n="vehicleModel">Vehicle Model</label><input class="form-control" id="vehicleModel" required placeholder="Mahindra Bolero"></div>
+        <div class="col-md-6"><label class="form-label" for="driverName" data-i18n="driver">Driver</label><input class="form-control" id="driverName" placeholder="Driver name"></div>
+        <div class="col-md-6"><label class="form-label" for="vehicleLocation" data-i18n="location">Location</label><input class="form-control" id="vehicleLocation" placeholder="Village / District"></div>
+        <div class="col-md-6"><label class="form-label" for="vehicleStatus" data-i18n="status">Status</label><select class="form-select" id="vehicleStatus"><option>Available</option><option>On Trip</option><option>Maintenance</option><option>Inactive</option></select></div>
+      </div><div id="vehicleMessage" class="small mt-3" role="alert"></div>
+    </div><div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" data-i18n="cancel">Cancel</button><button class="btn btn-primary-rural" type="submit" data-i18n="save">Save</button></div></form>
+  </div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script>
+if (!isAdmin()) window.location.href = '../login.html';
+
+const modal = new bootstrap.Modal(document.getElementById('vehicleModal'));
+let vehicles = [];
+
+function badge(status) {
+  const cls = {'Available':'fleet-badge-success','On Trip':'fleet-badge-warning','Booked':'fleet-badge-warning','Maintenance':'fleet-badge-danger','Inactive':'fleet-badge-muted'}[status] || 'fleet-badge-muted';
+  return `<span class="fleet-badge ${cls}">${escapeHtml(status || 'Unknown')}</span>`;
+}
+
+function renderVehicles() {
+  const q = document.getElementById('vehicleSearch').value.trim().toLowerCase();
+  const status = document.getElementById('statusFilter').value;
+  const filtered = vehicles.filter(v => {
+    const hay = [v.vehicleNumber,v.type,v.model,v.driverName,v.location,v.status].join(' ').toLowerCase();
+    return (!q || hay.includes(q)) && (!status || v.status === status);
+  });
+  const body = document.getElementById('vehiclesBody');
+  if (!filtered.length) { body.innerHTML = `<tr><td colspan="7" class="text-center text-muted py-5">${rcT('noVehicles')}</td></tr>`; return; }
+  body.innerHTML = filtered.map(v => `<tr>
+    <td><strong>${escapeHtml(v.vehicleNumber || '—')}</strong></td><td>${escapeHtml(v.type || '—')}</td><td>${escapeHtml(v.model || '—')}</td>
+    <td>${escapeHtml(v.driverName || 'Unassigned')}</td><td>${escapeHtml(v.location || '—')}</td><td>${badge(v.status)}</td>
+    <td class="text-end"><button class="btn btn-sm btn-outline-primary me-1" onclick="editVehicle('${escapeHtml(v._id)}')">${rcT('editVehicle')}</button><button class="btn btn-sm btn-outline-danger" onclick="removeVehicle('${escapeHtml(v._id)}')">${rcT('deleteVehicle')}</button></td>
+  </tr>`).join('');
+}
+
+function fillStats() {
+  document.getElementById('totalVehicles').textContent = vehicles.length;
+  document.getElementById('availableVehicles').textContent = vehicles.filter(v=>v.status==='Available').length;
+  document.getElementById('onTripVehicles').textContent = vehicles.filter(v=>v.status==='On Trip').length;
+  document.getElementById('maintenanceVehicles').textContent = vehicles.filter(v=>v.status==='Maintenance').length;
+}
+
+async function loadFleet() {
+  try {
+    const [v,d,t,m,b] = await Promise.all([fetchVehicles(),fetchDrivers(),fetchTrips(),fetchMaintenance(),fetchBookings()]);
+    vehicles = Array.isArray(v) ? v : [];
+    fillStats(); renderVehicles();
+    document.getElementById('driverCount').textContent = Array.isArray(d) ? d.length : 0;
+    document.getElementById('tripCount').textContent = Array.isArray(t) ? t.length : 0;
+    document.getElementById('maintenanceCount').textContent = Array.isArray(m) ? m.length : 0;
+    document.getElementById('activeDrivers').textContent = Array.isArray(d) ? d.filter(x=>x.status==='Active').length : 0;
+    document.getElementById('activeTrips').textContent = Array.isArray(t) ? t.filter(x=>x.status==='Active').length : 0; renderBookings(Array.isArray(b)?b:[]);
+    document.getElementById('driversList').innerHTML = (d||[]).slice(0,5).map(x=>`<div class="fleet-mini-row"><strong>${escapeHtml(x.name||'—')}</strong><span>${escapeHtml(x.phone||x.status||'')}</span></div>`).join('') || '<span class="text-muted">No drivers added.</span>';
+    document.getElementById('tripsList').innerHTML = (t||[]).slice(0,5).map(x=>`<div class="fleet-mini-row"><strong>${escapeHtml(x.vehicleNumber||'—')}</strong><span>${escapeHtml(x.destination||x.status||'')}</span></div>`).join('') || '<span class="text-muted">No trips added.</span>';
+    document.getElementById('maintenanceList').innerHTML = (m||[]).slice(0,5).map(x=>`<div class="fleet-mini-row"><strong>${escapeHtml(x.vehicleNumber||'—')}</strong><span>${escapeHtml(x.maintenanceType||x.status||'')}</span></div>`).join('') || '<span class="text-muted">No maintenance records.</span>';
+  } catch (err) {
+    document.getElementById('vehiclesBody').innerHTML = `<tr><td colspan="7" class="text-center text-danger py-5">${escapeHtml(err.message)}</td></tr>`;
+  }
+}
+
+
+function renderBookings(bookings){const body=document.getElementById('bookingsBody');document.getElementById('bookingCount').textContent=bookings.length;if(!bookings.length){body.innerHTML='<tr><td colspan="6" class="text-muted text-center py-4">No booking requests.</td></tr>';return;}body.innerHTML=bookings.slice().reverse().map(b=>{const st=b.status||'Pending';const cls={'Pending':'fleet-badge-warning','Approved':'fleet-badge-success','Rejected':'fleet-badge-danger','Completed':'fleet-badge-muted','Cancelled':'fleet-badge-muted'}[st]||'fleet-badge-muted';return `<tr><td><strong>${escapeHtml(b.userName||'User')}</strong><br><small>${escapeHtml(b.userPhone||'')}</small></td><td>${escapeHtml(b.vehicleNumber||'—')}</td><td>${escapeHtml(b.bookingDate||'—')}<br><small>${escapeHtml(b.bookingTime||'')}</small></td><td>${escapeHtml(b.purpose||'—')}</td><td><span class="fleet-badge ${cls}">${escapeHtml(st)}</span></td><td class="text-end">${st==='Pending'?`<button class="btn btn-sm btn-outline-success me-1" onclick="setBookingStatus('${escapeHtml(b._id)}','Approved')">${rcT('approve')}</button><button class="btn btn-sm btn-outline-danger" onclick="setBookingStatus('${escapeHtml(b._id)}','Rejected')">${rcT('reject')}</button>`:st==='Approved'?`<button class="btn btn-sm btn-outline-primary me-1" onclick="setBookingStatus('${escapeHtml(b._id)}','Completed')">${rcT('markCompleted')}</button><button class="btn btn-sm btn-outline-danger" onclick="setBookingStatus('${escapeHtml(b._id)}','Cancelled')">Cancel</button>`:'—'}</td></tr>`;}).join('');}
+async function setBookingStatus(id,status){try{await updateBookingStatus(id,status);await loadFleet();}catch(e){alert(e.message);}}
+
+function resetForm() {
+  document.getElementById('vehicleForm').reset();
+  document.getElementById('vehicleId').value='';
+  document.getElementById('vehicleModalLabel').textContent=rcT('addVehicle');
+  document.getElementById('vehicleMessage').textContent='';
+}
+function editVehicle(id) {
+  const v=vehicles.find(x=>String(x._id)===String(id)); if(!v)return;
+  document.getElementById('vehicleId').value=v._id; document.getElementById('vehicleNumber').value=v.vehicleNumber||''; document.getElementById('vehicleType').value=v.type||'';
+  document.getElementById('vehicleModel').value=v.model||''; document.getElementById('driverName').value=v.driverName||''; document.getElementById('vehicleLocation').value=v.location||''; document.getElementById('vehicleStatus').value=v.status||'Available';
+  document.getElementById('vehicleModalLabel').textContent=rcT('editVehicle'); document.getElementById('vehicleMessage').textContent=''; modal.show();
+}
+async function removeVehicle(id) {
+  const v=vehicles.find(x=>String(x._id)===String(id)); if(!v)return;
+  if(!confirm(`Delete ${v.vehicleNumber || 'this vehicle'}?`))return;
+  try { await deleteVehicle(id); await loadFleet(); } catch(err) { alert(err.message); }
+}
+
+document.getElementById('addVehicleBtn').onclick=()=>{resetForm();modal.show();};
+document.getElementById('vehicleSearch').oninput=renderVehicles;
+document.getElementById('statusFilter').onchange=renderVehicles;
+document.getElementById('vehicleForm').onsubmit=async(e)=>{
+  e.preventDefault();
+  const payload={vehicleNumber:document.getElementById('vehicleNumber').value.trim(),type:document.getElementById('vehicleType').value,model:document.getElementById('vehicleModel').value.trim(),driverName:document.getElementById('driverName').value.trim(),location:document.getElementById('vehicleLocation').value.trim(),status:document.getElementById('vehicleStatus').value};
+  const id=document.getElementById('vehicleId').value; const msg=document.getElementById('vehicleMessage');
+  try { if(id) await updateVehicle(id,payload); else await addVehicle(payload); modal.hide(); await loadFleet(); } catch(err) { msg.className='small mt-3 text-danger'; msg.textContent=err.message; }
+};
+loadFleet();
+</script>
+<script src="../js/language.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

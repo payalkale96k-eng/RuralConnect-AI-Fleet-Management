@@ -1,0 +1,15 @@
+{
+  "name": "rural-connect",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Rural Connect - One Platform for Rural Communities",
+  "scripts": {
+    "install:backend": "npm --prefix Backend install",
+    "seed": "npm --prefix Backend run seed",
+    "start": "npm --prefix Backend start",
+    "dev": "npm --prefix Backend run dev"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

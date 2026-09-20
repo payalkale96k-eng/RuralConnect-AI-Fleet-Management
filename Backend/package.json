@@ -1,0 +1,15 @@
+{
+  "name": "rural-connect-backend",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Rural Connect local backend (Node.js built-ins only)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node seed.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

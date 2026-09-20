@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n-title="bookVehicle">Book Vehicle – Rural Connect</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:#1b5e20;"><div class="container">
+<a class="navbar-brand" href="index.html">Rural Connect</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fleetUserNav" aria-controls="fleetUserNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="fleetUserNav"><ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="index.html" data-i18n="home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="schemes.html" data-i18n="schemes">Schemes</a></li>
+<li class="nav-item"><a class="nav-link active" href="fleet.html" data-i18n="bookVehicle">Book Vehicle</a></li>
+</ul><ul class="navbar-nav" id="auth-nav-links"></ul></div></div></nav>
+<main class="container fleet-page">
+<div class="fleet-heading"><div><span class="rc-section-kicker">RURAL SERVICES</span><h1 class="section-title mb-2" data-i18n="bookableVehicles">Fleet Vehicles</h1><p class="lead mb-0" data-i18n="bookVehicleHint">See all service vehicles. Available vehicles can be booked instantly.</p></div></div>
+<div id="fleetAlert" class="alert d-none" role="alert"></div>
+<section class="row g-4" id="vehicleCards"><div class="col-12 text-center text-muted py-5">Loading vehicles...</div></section>
+<section class="card fleet-panel mt-5" id="myBookingsPanel"><div class="card-body"><div class="fleet-card-head"><div><span class="rc-section-kicker">MY REQUESTS</span><h2 class="h5 mb-0" data-i18n="myBookings">My Bookings</h2></div></div><div class="table-responsive mt-3"><table class="table align-middle mb-0"><thead><tr><th>Vehicle</th><th>Date</th><th>Purpose</th><th data-i18n="bookingStatus">Booking Status</th></tr></thead><tbody id="bookingsBody"><tr><td colspan="4" class="text-muted text-center py-4">Log in to view your bookings.</td></tr></tbody></table></div></div></section>
+</main>
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content fleet-modal"><div class="modal-header"><div><span class="rc-section-kicker">BOOKING</span><h2 class="modal-title h5 mb-0" id="bookingModalLabel">Book Vehicle</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><form id="bookingForm"><div class="modal-body"><input type="hidden" id="bookingVehicleId"><div id="selectedVehicle" class="fleet-selected-vehicle mb-3"></div><div class="row g-3"><div class="col-md-6"><label class="form-label" for="bookingDate" data-i18n="bookingDate">Booking Date</label><input class="form-control" type="date" id="bookingDate" required></div><div class="col-md-6"><label class="form-label" for="bookingTime" data-i18n="bookingTime">Preferred Time</label><input class="form-control" type="time" id="bookingTime"></div><div class="col-12"><label class="form-label" for="bookingPurpose" data-i18n="bookingPurpose">Purpose</label><input class="form-control" id="bookingPurpose" required placeholder="e.g. agriculture support, village service"></div><div class="col-12"><label class="form-label" for="bookingNotes" data-i18n="bookingNotes">Additional Notes</label><textarea class="form-control" id="bookingNotes" rows="3"></textarea></div></div><div id="bookingMessage" class="small mt-3" role="alert"></div></div><div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" data-i18n="cancel">Cancel</button><button class="btn btn-primary-rural" type="submit" data-i18n="submitBooking">Submit Booking</button></div></form></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="js/config.js"></script><script src="js/api.js"></script>
+<script>
+const bookingModal=new bootstrap.Modal(document.getElementById('bookingModal'));let vehicles=[];
+function statusClass(status){return {'Available':'fleet-badge-success','Booked':'fleet-badge-warning','On Trip':'fleet-badge-warning','Maintenance':'fleet-badge-danger','Inactive':'fleet-badge-muted'}[status]||'fleet-badge-muted';}
+function showAlert(message,type='success'){const el=document.getElementById('fleetAlert');el.className='alert alert-'+type;el.textContent=message;}
+async function loadVehicles(){try{vehicles=await fetchVehicles();vehicles=Array.isArray(vehicles)?vehicles:[];renderVehicles();}catch(e){document.getElementById('vehicleCards').innerHTML='<div class="col-12"><div class="alert alert-danger">'+escapeHtml(e.message)+'</div></div>';}}
+function renderVehicles(){
+  const box=document.getElementById('vehicleCards');
+  if(!vehicles.length){box.innerHTML='<div class="col-12"><div class="fleet-empty">No vehicles have been added yet.</div></div>';return;}
+  box.innerHTML=vehicles.map(v=>{
+    const available=v.status==='Available';
+    const cls=statusClass(v.status);
+    const action=available
+      ? `<button class="btn btn-primary-rural mt-auto" onclick="openBooking('${escapeHtml(v._id)}')" data-i18n="bookNow">Book Now</button>`
+      : `<button class="btn btn-outline-secondary mt-auto" disabled>${escapeHtml(v.status||'Unavailable')}</button>`;
+    return `<div class="col-md-6 col-lg-4"><article class="card fleet-booking-card h-100"><div class="card-body d-flex flex-column"><div class="d-flex justify-content-between align-items-start gap-2"><span class="fleet-icon">▣</span><span class="fleet-badge ${cls}">${escapeHtml(v.status||'Unknown')}</span></div><h2 class="h5 mt-3 mb-1">${escapeHtml(v.vehicleNumber||'Vehicle')}</h2><p class="text-muted mb-2">${escapeHtml(v.type||'')} ${v.model?'• '+escapeHtml(v.model):''}</p><p class="small text-muted mb-4">${escapeHtml(v.location||'Location not specified')} ${v.driverName?'• Driver: '+escapeHtml(v.driverName):''}</p>${action}</article></div>`;
+  }).join('');
+}
+function openBooking(id){if(!isLoggedIn()){showAlert(rcT('bookVehicleLogin'),'warning');window.location.href='login.html';return;}const v=vehicles.find(x=>String(x._id)===String(id));if(!v)return;document.getElementById('bookingVehicleId').value=v._id;document.getElementById('selectedVehicle').innerHTML='<strong>'+escapeHtml(v.vehicleNumber)+'</strong> · '+escapeHtml(v.type||'')+(v.location?' · '+escapeHtml(v.location):'');const today=new Date().toISOString().slice(0,10);document.getElementById('bookingDate').min=today;document.getElementById('bookingDate').value=today;document.getElementById('bookingPurpose').value='';document.getElementById('bookingNotes').value='';document.getElementById('bookingMessage').textContent='';bookingModal.show();}
+document.getElementById('bookingForm').onsubmit=async e=>{e.preventDefault();const msg=document.getElementById('bookingMessage');try{await createVehicleBooking({vehicleId:document.getElementById('bookingVehicleId').value,bookingDate:document.getElementById('bookingDate').value,bookingTime:document.getElementById('bookingTime').value,purpose:document.getElementById('bookingPurpose').value.trim(),notes:document.getElementById('bookingNotes').value.trim()});bookingModal.hide();showAlert(rcT('bookingSubmitted'),'success');await loadVehicles();await loadBookings();}catch(err){msg.className='small mt-3 text-danger';msg.textContent=err.message;}};
+async function loadBookings(){const body=document.getElementById('bookingsBody');if(!isLoggedIn()){body.innerHTML='<tr><td colspan="4" class="text-muted text-center py-4">Log in to view your bookings.</td></tr>';return;}try{const rows=await fetchBookings({mine:true});if(!rows.length){body.innerHTML='<tr><td colspan="4" class="text-muted text-center py-4">'+rcT('noBookings')+'</td></tr>';return;}body.innerHTML=rows.slice().reverse().map(b=>`<tr><td><strong>${escapeHtml(b.vehicleNumber)}</strong><br><small class="text-muted">${escapeHtml(b.vehicleType||'')}</small></td><td>${escapeHtml(b.bookingDate||'—')} ${escapeHtml(b.bookingTime||'')}</td><td>${escapeHtml(b.purpose||'—')}</td><td><span class="fleet-badge ${statusClass(b.status)}">${escapeHtml(b.status||'Pending')}</span></td></tr>`).join('');}catch(e){body.innerHTML='<tr><td colspan="4" class="text-danger text-center py-4">'+escapeHtml(e.message)+'</td></tr>';}}
+loadVehicles();loadBookings();
+</script><script src="js/language.js"></script><script src="js/chatbot.js"></script>
+</body></html>

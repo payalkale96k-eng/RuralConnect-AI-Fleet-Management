@@ -1,0 +1,1064 @@
+{
+  "users": [
+    {
+      "_id": "usr_c3cc6a3e-e6ac-40ba-8d03-b464428f5534",
+      "name": "Admin User",
+      "email": "admin@ruralconnect.local",
+      "passwordHash": "pbkdf2$120000$60ae8481c7dc2a7c9baca6a00fb32142$5e15448f901001a7fc3ceda4f740413bd1e03caececa02c59c005cbbfcf7bcc8",
+      "role": "admin",
+      "phone": "",
+      "village": "",
+      "district": "",
+      "state": "",
+      "createdAt": "2026-09-08T05:49:43.735Z",
+      "updatedAt": "2026-09-08T05:49:43.736Z"
+    },
+    {
+      "_id": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "name": "Ramesh Kumar",
+      "email": "user@ruralconnect.local",
+      "passwordHash": "pbkdf2$120000$ad6b06915f547ed5f49c341be6964e0d$72d7fc02603d85f1a0e76c78b2090f5aef30dafcbd4ea27a03f05f02aad39afd",
+      "role": "user",
+      "phone": "9876543210",
+      "village": "Rampur",
+      "district": "Jaipur",
+      "state": "Rajasthan",
+      "createdAt": "2026-09-08T05:49:43.751Z",
+      "updatedAt": "2026-09-08T05:49:43.751Z"
+    }
+  ],
+  "schemes": [
+    {
+      "_id": "scheme_7af6ce27-ecef-4420-83bd-766ca3ccb347",
+      "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+      "description": "Income support scheme for farmers providing Rs. 6,000 per year in three installments.",
+      "benefits": "Rs. 6,000 per year directly transferred to bank account",
+      "eligibility": "All landholding farmer families",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Land records",
+        "Bank account details"
+      ],
+      "applicationProcess": "Register through the local agriculture department or official online portal.",
+      "applicationLink": "https://pmkisan.gov.in/",
+      "targetCategory": [
+        "Farmers",
+        "Agriculture"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "description": "Income support scheme for farmers providing Rs. 6,000 per year in three installments.",
+          "benefits": "Rs. 6,000 per year directly transferred to bank account",
+          "eligibility": "All landholding farmer families",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Land records",
+            "Bank account details"
+          ],
+          "applicationProcess": "Register through the local agriculture department or official online portal."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री किसान सन्मान निधी (PM-KISAN)",
+          "description": "पात्र शेतकरी कुटुंबांना उत्पन्नाचा आधार देणारी केंद्र सरकारची योजना. वर्षाला ₹6,000 तीन समान हप्त्यांमध्ये दिले जातात.",
+          "benefits": "वर्षाला ₹6,000 थेट बँक खात्यात जमा केले जातात.",
+          "eligibility": "योजनेच्या नियमांनुसार पात्र जमीनधारक शेतकरी कुटुंबे.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "जमिनीचे अभिलेख",
+            "बँक खाते तपशील"
+          ],
+          "applicationProcess": "अधिकृत PM-KISAN पोर्टल किंवा संबंधित कृषी विभागामार्फत नोंदणी करा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)",
+          "description": "पात्र किसान परिवारों को आय सहायता देने वाली केंद्र सरकार की योजना। प्रति वर्ष ₹6,000 तीन समान किस्तों में दिए जाते हैं।",
+          "benefits": "प्रति वर्ष ₹6,000 सीधे बैंक खाते में भेजे जाते हैं।",
+          "eligibility": "योजना के नियमों के अनुसार पात्र भूमि-धारक किसान परिवार।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "भूमि अभिलेख",
+            "बैंक खाते का विवरण"
+          ],
+          "applicationProcess": "आधिकारिक PM-KISAN पोर्टल या संबंधित कृषि विभाग के माध्यम से पंजीकरण करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_55e6eba6-7410-43c6-bc4a-6ce01cc5adc7",
+      "name": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)",
+      "description": "Guarantees up to 100 days of wage employment per year to rural households.",
+      "benefits": "Wage employment and village asset creation",
+      "eligibility": "Adult members of rural households willing to do unskilled manual work",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Job card"
+      ],
+      "applicationProcess": "Apply at the Gram Panchayat for a job card.",
+      "applicationLink": "https://nrega.nic.in/",
+      "targetCategory": [
+        "Employment",
+        "Farmers"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)",
+          "description": "Guarantees up to 100 days of wage employment per year to rural households.",
+          "benefits": "Wage employment and village asset creation",
+          "eligibility": "Adult members of rural households willing to do unskilled manual work",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Job card"
+          ],
+          "applicationProcess": "Apply at the Gram Panchayat for a job card."
+        },
+        "mr": {
+          "name": "महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी कायदा (MGNREGA)",
+          "description": "ग्रामीण कुटुंबांना मागणीनुसार वर्षाला 100 दिवसांपर्यंत अकुशल मजुरीचे रोजगार देण्याची हमी देणारी योजना.",
+          "benefits": "मजुरीचा रोजगार आणि गावातील सार्वजनिक मालमत्ता निर्मितीस मदत.",
+          "eligibility": "अकुशल शारीरिक काम करण्यास इच्छुक ग्रामीण कुटुंबातील प्रौढ सदस्य.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "जॉब कार्ड"
+          ],
+          "applicationProcess": "ग्रामपंचायतीकडे जॉब कार्ड व रोजगारासाठी अर्ज करा."
+        },
+        "hi": {
+          "name": "महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार गारंटी अधिनियम (MGNREGA)",
+          "description": "ग्रामीण परिवारों को मांग के आधार पर प्रति वर्ष 100 दिनों तक अकुशल मजदूरी रोजगार की गारंटी देने वाली योजना।",
+          "benefits": "मजदूरी रोजगार और गाँव में सार्वजनिक परिसंपत्तियों के निर्माण में सहायता।",
+          "eligibility": "ग्रामीण परिवार के ऐसे वयस्क सदस्य जो अकुशल शारीरिक कार्य करना चाहते हैं।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "जॉब कार्ड"
+          ],
+          "applicationProcess": "ग्राम पंचायत में जॉब कार्ड और रोजगार के लिए आवेदन करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_e9f3fc28-c2a1-4603-8042-885602fe582a",
+      "name": "Pradhan Mantri Awas Yojana (PMAY) - Gramin",
+      "description": "Financial assistance for eligible rural households to construct pucca houses.",
+      "benefits": "Housing assistance for eligible rural families",
+      "eligibility": "Rural households living in kutcha or dilapidated houses",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "BPL certificate",
+        "Bank account details"
+      ],
+      "applicationProcess": "Apply through the Gram Panchayat or official portal.",
+      "applicationLink": "https://pmayg.nic.in/",
+      "targetCategory": [
+        "Housing",
+        "Senior citizens"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Awas Yojana (PMAY) - Gramin",
+          "description": "Financial assistance for eligible rural households to construct pucca houses.",
+          "benefits": "Housing assistance for eligible rural families",
+          "eligibility": "Rural households living in kutcha or dilapidated houses",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "BPL certificate",
+            "Bank account details"
+          ],
+          "applicationProcess": "Apply through the Gram Panchayat or official portal."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री आवास योजना – ग्रामीण (PMAY-G)",
+          "description": "पात्र ग्रामीण कुटुंबांना पक्के घर बांधण्यासाठी आर्थिक मदत देणारी योजना.",
+          "benefits": "पात्र ग्रामीण कुटुंबांना घरकुलासाठी आर्थिक सहाय्य.",
+          "eligibility": "योजनेच्या निकषांनुसार पात्र ग्रामीण कुटुंबे, विशेषतः कच्च्या किंवा जीर्ण घरात राहणारे कुटुंब.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "उत्पन्न/अधिवास किंवा संबंधित प्रमाणपत्र",
+            "बँक खाते तपशील"
+          ],
+          "applicationProcess": "ग्रामपंचायत किंवा अधिकृत PMAY-G प्रक्रियेद्वारे अर्ज करा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री आवास योजना – ग्रामीण (PMAY-G)",
+          "description": "पात्र ग्रामीण परिवारों को पक्का घर बनाने के लिए वित्तीय सहायता देने वाली योजना।",
+          "benefits": "पात्र ग्रामीण परिवारों के लिए आवास निर्माण हेतु वित्तीय सहायता।",
+          "eligibility": "योजना के मानदंडों के अनुसार पात्र ग्रामीण परिवार, विशेषकर कच्चे या जर्जर घरों में रहने वाले परिवार।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "आय/निवास या संबंधित प्रमाणपत्र",
+            "बैंक खाते का विवरण"
+          ],
+          "applicationProcess": "ग्राम पंचायत या आधिकारिक PMAY-G प्रक्रिया के माध्यम से आवेदन करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_56b90c4d-9fe2-4b60-8f5f-bd24b5e6fb57",
+      "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+      "description": "Crop insurance support for eligible farmers against specified crop losses and risks.",
+      "benefits": "Insurance coverage and financial support subject to scheme rules, crop and notified area.",
+      "eligibility": "Eligible farmers cultivating notified crops in notified areas, subject to current scheme and state rules.",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Land/tenancy or cultivation records",
+        "Bank account details",
+        "Crop and sowing details"
+      ],
+      "applicationProcess": "Apply through the notified bank, Common Service Centre, agriculture department or official portal within the applicable season deadline.",
+      "applicationLink": "https://pmfby.gov.in/",
+      "targetCategory": [
+        "Farmers",
+        "Agriculture"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "description": "Crop insurance support for eligible farmers against specified crop losses and risks.",
+          "benefits": "Insurance coverage and financial support subject to scheme rules, crop and notified area.",
+          "eligibility": "Eligible farmers cultivating notified crops in notified areas, subject to current scheme and state rules.",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Land/tenancy or cultivation records",
+            "Bank account details",
+            "Crop and sowing details"
+          ],
+          "applicationProcess": "Apply through the notified bank, Common Service Centre, agriculture department or official portal within the applicable season deadline."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री पीक विमा योजना (PMFBY)",
+          "description": "अधिसूचित पिके व क्षेत्रांसाठी पात्र शेतकऱ्यांना पिकांच्या विशिष्ट जोखमींपासून विमा संरक्षण देणारी योजना.",
+          "benefits": "योजनेच्या नियमांनुसार पिकांचे विमा संरक्षण व नुकसान झाल्यास आर्थिक भरपाई.",
+          "eligibility": "अधिसूचित क्षेत्रात अधिसूचित पिके घेणारे पात्र शेतकरी, राज्य व हंगामाच्या नियमांनुसार.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "जमीन/भाडेपट्टा किंवा लागवड नोंद",
+            "बँक खाते तपशील",
+            "पिकाची माहिती"
+          ],
+          "applicationProcess": "अधिसूचित बँक, CSC, कृषी विभाग किंवा अधिकृत पोर्टलद्वारे अंतिम मुदतीपूर्वी अर्ज करा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री फसल बीमा योजना (PMFBY)",
+          "description": "अधिसूचित फसलों और क्षेत्रों में पात्र किसानों को फसल जोखिमों से बीमा सुरक्षा देने वाली योजना।",
+          "benefits": "योजना नियमों के अनुसार फसल बीमा सुरक्षा और नुकसान की स्थिति में वित्तीय मुआवजा।",
+          "eligibility": "अधिसूचित क्षेत्र में अधिसूचित फसल उगाने वाले पात्र किसान, राज्य और मौसम के नियमों के अनुसार।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "भूमि/पट्टा या खेती का रिकॉर्ड",
+            "बैंक खाते का विवरण",
+            "फसल की जानकारी"
+          ],
+          "applicationProcess": "अधिसूचित बैंक, CSC, कृषि विभाग या आधिकारिक पोर्टल के माध्यम से समय सीमा के भीतर आवेदन करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_77890044-8bc5-444c-8054-6b0a12a8578b",
+      "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+      "description": "Supports eligible women from poor households in getting an LPG connection.",
+      "benefits": "LPG connection support and related assistance as applicable under the current scheme.",
+      "eligibility": "Eligible adult women from households meeting the scheme criteria and without an existing LPG connection in the household.",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Address proof",
+        "Bank account details",
+        "Ration/family details"
+      ],
+      "applicationProcess": "Apply through an LPG distributor or the official PMUY portal.",
+      "applicationLink": "https://www.pmuy.gov.in/",
+      "targetCategory": [
+        "Women",
+        "Health"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "description": "Supports eligible women from poor households in getting an LPG connection.",
+          "benefits": "LPG connection support and related assistance as applicable under the current scheme.",
+          "eligibility": "Eligible adult women from households meeting the scheme criteria and without an existing LPG connection in the household.",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Address proof",
+            "Bank account details",
+            "Ration/family details"
+          ],
+          "applicationProcess": "Apply through an LPG distributor or the official PMUY portal."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री उज्ज्वला योजना (PMUY)",
+          "description": "पात्र गरीब कुटुंबातील महिलांना LPG गॅस जोडणी मिळवून देण्यासाठी सहाय्य करणारी योजना.",
+          "benefits": "योजनेनुसार LPG जोडणी व संबंधित आर्थिक/इतर सहाय्य.",
+          "eligibility": "योजनेच्या निकषांनुसार पात्र प्रौढ महिला, ज्या कुटुंबाकडे आधीपासून LPG जोडणी नाही.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "पत्त्याचा पुरावा",
+            "बँक खाते तपशील",
+            "रेशन/कुटुंब तपशील"
+          ],
+          "applicationProcess": "अधिकृत LPG वितरक किंवा PMUY पोर्टलमार्फत अर्ज करा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री उज्ज्वला योजना (PMUY)",
+          "description": "पात्र गरीब परिवारों की महिलाओं को LPG कनेक्शन प्राप्त करने में सहायता देने वाली योजना।",
+          "benefits": "योजना के अनुसार LPG कनेक्शन और संबंधित सहायता।",
+          "eligibility": "योजना के मानदंडों को पूरा करने वाली वयस्क महिला, जिसके परिवार में पहले से LPG कनेक्शन नहीं है।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "पते का प्रमाण",
+            "बैंक खाते का विवरण",
+            "राशन/परिवार का विवरण"
+          ],
+          "applicationProcess": "अधिकृत LPG वितरक या PMUY पोर्टल के माध्यम से आवेदन करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_248408f2-8314-4ad2-9fd5-59e18260692e",
+      "name": "Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+      "description": "Provides cashless hospitalisation cover to eligible poor and vulnerable families.",
+      "benefits": "Cashless hospitalisation cover up to ₹5 lakh per family per year for covered services, subject to scheme rules.",
+      "eligibility": "Families/beneficiaries identified under applicable government eligibility criteria.",
+      "requiredDocuments": [
+        "Aadhaar or other accepted ID",
+        "Ration card/family ID where applicable"
+      ],
+      "applicationProcess": "Check eligibility and obtain assistance through an empanelled hospital, CSC or official PM-JAY channels.",
+      "applicationLink": "https://pmjay.gov.in/",
+      "targetCategory": [
+        "Health",
+        "Women",
+        "Senior citizens"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+          "description": "Provides cashless hospitalisation cover to eligible poor and vulnerable families.",
+          "benefits": "Cashless hospitalisation cover up to ₹5 lakh per family per year for covered services, subject to scheme rules.",
+          "eligibility": "Families/beneficiaries identified under applicable government eligibility criteria.",
+          "requiredDocuments": [
+            "Aadhaar or other accepted ID",
+            "Ration card/family ID where applicable"
+          ],
+          "applicationProcess": "Check eligibility and obtain assistance through an empanelled hospital, CSC or official PM-JAY channels."
+        },
+        "mr": {
+          "name": "आयुष्मान भारत – प्रधानमंत्री जन आरोग्य योजना (PM-JAY)",
+          "description": "पात्र गरीब व असुरक्षित कुटुंबांना सूचीबद्ध रुग्णालयांमध्ये कॅशलेस उपचारासाठी आरोग्य संरक्षण देणारी योजना.",
+          "benefits": "योजनेत समाविष्ट उपचारांसाठी प्रति कुटुंब प्रति वर्ष ₹5 लाखांपर्यंत कॅशलेस रुग्णालयीन संरक्षण, नियमांनुसार.",
+          "eligibility": "सरकारच्या लागू पात्रता निकषांनुसार ओळखलेले पात्र लाभार्थी/कुटुंबे.",
+          "requiredDocuments": [
+            "आधार किंवा स्वीकार्य ओळखपत्र",
+            "रेशन कार्ड/कुटुंब ओळखपत्र, लागू असल्यास"
+          ],
+          "applicationProcess": "पात्रता तपासा आणि CSC, सूचीबद्ध रुग्णालय किंवा अधिकृत PM-JAY माध्यमातून मदत घ्या."
+        },
+        "hi": {
+          "name": "आयुष्मान भारत – प्रधानमंत्री जन आरोग्य योजना (PM-JAY)",
+          "description": "पात्र गरीब और कमजोर परिवारों को सूचीबद्ध अस्पतालों में कैशलेस इलाज के लिए स्वास्थ्य सुरक्षा देने वाली योजना।",
+          "benefits": "योजना में शामिल उपचारों के लिए प्रति परिवार प्रति वर्ष ₹5 लाख तक कैशलेस अस्पताल कवरेज, नियमों के अनुसार।",
+          "eligibility": "सरकार के लागू पात्रता मानदंडों के अनुसार पहचाने गए पात्र लाभार्थी/परिवार।",
+          "requiredDocuments": [
+            "आधार या स्वीकार्य पहचान पत्र",
+            "राशन कार्ड/परिवार पहचान पत्र, जहाँ लागू हो"
+          ],
+          "applicationProcess": "पात्रता जाँचें और CSC, सूचीबद्ध अस्पताल या आधिकारिक PM-JAY माध्यम से सहायता लें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_8f37df57-dbb3-4384-8a1b-96184ef3c225",
+      "name": "PM Vishwakarma",
+      "description": "Supports traditional artisans and craftspeople through recognition, training and other assistance.",
+      "benefits": "Training, toolkit support, credit and other benefits subject to eligibility and scheme conditions.",
+      "eligibility": "Eligible artisans and craftspeople in notified traditional trades, subject to scheme criteria.",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Mobile number",
+        "Bank account details",
+        "Occupation/trade details"
+      ],
+      "applicationProcess": "Register through a CSC or official PM Vishwakarma channel and complete verification.",
+      "applicationLink": "https://pmvishwakarma.gov.in/",
+      "targetCategory": [
+        "Employment",
+        "Agriculture"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "PM Vishwakarma",
+          "description": "Supports traditional artisans and craftspeople through recognition, training and other assistance.",
+          "benefits": "Training, toolkit support, credit and other benefits subject to eligibility and scheme conditions.",
+          "eligibility": "Eligible artisans and craftspeople in notified traditional trades, subject to scheme criteria.",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Mobile number",
+            "Bank account details",
+            "Occupation/trade details"
+          ],
+          "applicationProcess": "Register through a CSC or official PM Vishwakarma channel and complete verification."
+        },
+        "mr": {
+          "name": "PM विश्वकर्मा",
+          "description": "पारंपरिक कारागीर आणि हस्तकला व्यवसाय करणाऱ्या पात्र व्यक्तींना ओळख, प्रशिक्षण, साधनसामग्री व इतर सहाय्य देणारी योजना.",
+          "benefits": "प्रशिक्षण, टूलकिट सहाय्य, कर्ज सुविधा व इतर लाभ, पात्रतेनुसार.",
+          "eligibility": "अधिसूचित पारंपरिक व्यवसायातील पात्र कारागीर व हस्तकला कामगार.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "मोबाइल क्रमांक",
+            "बँक खाते तपशील",
+            "व्यवसाय/कौशल्याची माहिती"
+          ],
+          "applicationProcess": "CSC किंवा अधिकृत PM विश्वकर्मा माध्यमातून नोंदणी करून पडताळणी पूर्ण करा."
+        },
+        "hi": {
+          "name": "पीएम विश्वकर्मा",
+          "description": "पारंपरिक कारीगरों और शिल्पकारों को पहचान, प्रशिक्षण, औजार और अन्य सहायता देने वाली योजना।",
+          "benefits": "प्रशिक्षण, टूलकिट सहायता, ऋण सुविधा और अन्य लाभ, पात्रता के अनुसार।",
+          "eligibility": "अधिसूचित पारंपरिक व्यवसायों में पात्र कारीगर और शिल्पकार।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "मोबाइल नंबर",
+            "बैंक खाते का विवरण",
+            "व्यवसाय/कौशल की जानकारी"
+          ],
+          "applicationProcess": "CSC या आधिकारिक PM विश्वकर्मा माध्यम से पंजीकरण और सत्यापन पूरा करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_ed557c64-26a8-44d7-9ce5-ebab7c04a241",
+      "name": "Pradhan Mantri MUDRA Yojana (PMMY)",
+      "description": "Provides institutional credit support for eligible micro and small business activities.",
+      "benefits": "Business loans under applicable MUDRA categories through participating lenders, subject to lender rules.",
+      "eligibility": "Eligible non-corporate, non-farm small or micro enterprises and entrepreneurs, subject to lender assessment.",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "PAN where applicable",
+        "Address proof",
+        "Business details",
+        "Bank account details"
+      ],
+      "applicationProcess": "Approach a participating bank, NBFC or MFI and apply for the suitable MUDRA loan.",
+      "applicationLink": "https://www.mudra.org.in/",
+      "targetCategory": [
+        "Employment",
+        "Women"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri MUDRA Yojana (PMMY)",
+          "description": "Provides institutional credit support for eligible micro and small business activities.",
+          "benefits": "Business loans under applicable MUDRA categories through participating lenders, subject to lender rules.",
+          "eligibility": "Eligible non-corporate, non-farm small or micro enterprises and entrepreneurs, subject to lender assessment.",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "PAN where applicable",
+            "Address proof",
+            "Business details",
+            "Bank account details"
+          ],
+          "applicationProcess": "Approach a participating bank, NBFC or MFI and apply for the suitable MUDRA loan."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री मुद्रा योजना (PMMY)",
+          "description": "पात्र सूक्ष्म व लघु व्यवसायांसाठी संस्थात्मक कर्ज सुविधा उपलब्ध करून देणारी योजना.",
+          "benefits": "सहभागी बँका, NBFC किंवा MFI मार्फत लागू MUDRA श्रेणींमध्ये व्यवसाय कर्ज.",
+          "eligibility": "पात्र बिगर-कॉर्पोरेट, बिगर-कृषी सूक्ष्म/लघु व्यवसाय व उद्योजक, कर्जदात्याच्या निकषांनुसार.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "PAN, लागू असल्यास",
+            "पत्त्याचा पुरावा",
+            "व्यवसाय तपशील",
+            "बँक खाते तपशील"
+          ],
+          "applicationProcess": "सहभागी बँक, NBFC किंवा MFI कडे योग्य MUDRA कर्जासाठी अर्ज करा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री मुद्रा योजना (PMMY)",
+          "description": "पात्र सूक्ष्म और छोटे व्यवसायों के लिए संस्थागत ऋण सहायता उपलब्ध कराने वाली योजना।",
+          "benefits": "भाग लेने वाले बैंक, NBFC या MFI के माध्यम से लागू MUDRA श्रेणियों में व्यवसाय ऋण।",
+          "eligibility": "पात्र गैर-कॉर्पोरेट, गैर-कृषि सूक्ष्म/लघु उद्यम और उद्यमी, ऋणदाता के आकलन के अनुसार।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "PAN, जहाँ लागू हो",
+            "पते का प्रमाण",
+            "व्यवसाय का विवरण",
+            "बैंक खाते का विवरण"
+          ],
+          "applicationProcess": "भाग लेने वाले बैंक, NBFC या MFI से उपयुक्त MUDRA ऋण के लिए आवेदन करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_fb981bd6-beb3-4372-a75c-195393712acd",
+      "name": "Sukanya Samriddhi Yojana",
+      "description": "Small savings scheme intended for the future education and financial security of a girl child.",
+      "benefits": "Government-backed savings account with applicable interest and tax benefits under prevailing rules.",
+      "eligibility": "Account can generally be opened for a girl child meeting the scheme age and account conditions.",
+      "requiredDocuments": [
+        "Girl child birth certificate",
+        "Guardian Aadhaar/ID",
+        "Address proof",
+        "Photograph"
+      ],
+      "applicationProcess": "Open an account at an authorised bank or post office.",
+      "applicationLink": "https://www.indiapost.gov.in/",
+      "targetCategory": [
+        "Women",
+        "Students"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Sukanya Samriddhi Yojana",
+          "description": "Small savings scheme intended for the future education and financial security of a girl child.",
+          "benefits": "Government-backed savings account with applicable interest and tax benefits under prevailing rules.",
+          "eligibility": "Account can generally be opened for a girl child meeting the scheme age and account conditions.",
+          "requiredDocuments": [
+            "Girl child birth certificate",
+            "Guardian Aadhaar/ID",
+            "Address proof",
+            "Photograph"
+          ],
+          "applicationProcess": "Open an account at an authorised bank or post office."
+        },
+        "mr": {
+          "name": "सुकन्या समृद्धी योजना",
+          "description": "मुलीच्या भविष्यातील शिक्षण व आर्थिक सुरक्षिततेसाठी बचत प्रोत्साहन देणारी लघुबचत योजना.",
+          "benefits": "लागू व्याजदर व करनियमांनुसार सरकारी पाठबळ असलेले बचत खाते.",
+          "eligibility": "योजनेतील वय व खाते उघडण्याच्या अटी पूर्ण करणाऱ्या मुलीसाठी खाते उघडता येते.",
+          "requiredDocuments": [
+            "मुलीचा जन्म दाखला",
+            "पालकाचे आधार/ओळखपत्र",
+            "पत्त्याचा पुरावा",
+            "फोटो"
+          ],
+          "applicationProcess": "अधिकृत बँक किंवा पोस्ट ऑफिसमध्ये खाते उघडा."
+        },
+        "hi": {
+          "name": "सुकन्या समृद्धि योजना",
+          "description": "बालिका की भविष्य की शिक्षा और वित्तीय सुरक्षा के लिए बचत को प्रोत्साहित करने वाली छोटी बचत योजना।",
+          "benefits": "लागू ब्याज दर और कर नियमों के अनुसार सरकार समर्थित बचत खाता।",
+          "eligibility": "योजना की आयु और खाता खोलने की शर्तें पूरी करने वाली बालिका के लिए खाता खोला जा सकता है।",
+          "requiredDocuments": [
+            "बालिका का जन्म प्रमाणपत्र",
+            "अभिभावक का आधार/पहचान पत्र",
+            "पते का प्रमाण",
+            "फोटो"
+          ],
+          "applicationProcess": "अधिकृत बैंक या डाकघर में खाता खोलें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_4a47e5f8-c52a-4092-8bf2-40f17ac2112e",
+      "name": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)",
+      "description": "Voluntary contributory pension scheme for eligible small and marginal farmers.",
+      "benefits": "Assured pension of ₹3,000 per month after age 60, subject to scheme conditions and contributions.",
+      "eligibility": "Eligible small and marginal farmers generally aged 18–40 years, subject to current scheme rules.",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Bank account details",
+        "Land/cultivation records"
+      ],
+      "applicationProcess": "Register through a CSC or the official PM-KMY enrolment channel and make the applicable contribution.",
+      "applicationLink": "https://maandhan.in/",
+      "targetCategory": [
+        "Farmers",
+        "Agriculture",
+        "Senior citizens"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)",
+          "description": "Voluntary contributory pension scheme for eligible small and marginal farmers.",
+          "benefits": "Assured pension of ₹3,000 per month after age 60, subject to scheme conditions and contributions.",
+          "eligibility": "Eligible small and marginal farmers generally aged 18–40 years, subject to current scheme rules.",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Bank account details",
+            "Land/cultivation records"
+          ],
+          "applicationProcess": "Register through a CSC or the official PM-KMY enrolment channel and make the applicable contribution."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री किसान मानधन योजना (PM-KMY)",
+          "description": "पात्र लहान व अल्पभूधारक शेतकऱ्यांसाठी स्वेच्छा व अंशदायी पेन्शन योजना.",
+          "benefits": "वयाच्या 60 वर्षांनंतर योजनेच्या अटी व योगदानानुसार ₹3,000 प्रतिमहिना सुनिश्चित पेन्शन.",
+          "eligibility": "साधारणपणे 18 ते 40 वर्षे वयोगटातील पात्र लहान व अल्पभूधारक शेतकरी, लागू नियमांनुसार.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "बँक खाते तपशील",
+            "जमीन/लागवड अभिलेख"
+          ],
+          "applicationProcess": "CSC किंवा अधिकृत PM-KMY नोंदणी माध्यमातून नोंदणी करून योगदान भरा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री किसान मानधन योजना (PM-KMY)",
+          "description": "पात्र छोटे और सीमांत किसानों के लिए स्वैच्छिक अंशदायी पेंशन योजना।",
+          "benefits": "60 वर्ष की आयु के बाद योजना की शर्तों और योगदान के अनुसार ₹3,000 प्रति माह सुनिश्चित पेंशन।",
+          "eligibility": "आम तौर पर 18–40 वर्ष आयु के पात्र छोटे और सीमांत किसान, लागू नियमों के अनुसार।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "बैंक खाते का विवरण",
+            "भूमि/खेती के रिकॉर्ड"
+          ],
+          "applicationProcess": "CSC या आधिकारिक PM-KMY नामांकन माध्यम से पंजीकरण करें और लागू योगदान दें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_e9b984a7-f507-4943-8494-13c025640396",
+      "name": "Pradhan Mantri Jan-Dhan Yojana (PMJDY)",
+      "description": "National financial inclusion programme for access to basic banking services.",
+      "benefits": "Basic bank account, RuPay debit card and access to eligible banking/DBT services; overdraft is subject to conditions.",
+      "eligibility": "Eligible individuals who do not already have a suitable basic bank account, subject to bank/KYC rules.",
+      "requiredDocuments": [
+        "Aadhaar card or accepted KYC document",
+        "Address proof",
+        "Mobile number"
+      ],
+      "applicationProcess": "Open an eligible basic savings account through a participating bank or authorised banking channel.",
+      "applicationLink": "https://pmjdy.gov.in/",
+      "targetCategory": [
+        "Financial Services",
+        "Women",
+        "Farmers"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Jan-Dhan Yojana (PMJDY)",
+          "description": "National financial inclusion programme for access to basic banking services.",
+          "benefits": "Basic bank account, RuPay debit card and access to eligible banking/DBT services; overdraft is subject to conditions.",
+          "eligibility": "Eligible individuals who do not already have a suitable basic bank account, subject to bank/KYC rules.",
+          "requiredDocuments": [
+            "Aadhaar card or accepted KYC document",
+            "Address proof",
+            "Mobile number"
+          ],
+          "applicationProcess": "Open an eligible basic savings account through a participating bank or authorised banking channel."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री जन-धन योजना (PMJDY)",
+          "description": "मूलभूत बँकिंग सेवा सर्वांपर्यंत पोहोचविण्यासाठीची राष्ट्रीय आर्थिक समावेशन योजना.",
+          "benefits": "मूलभूत बँक खाते, RuPay डेबिट कार्ड आणि पात्रतेनुसार DBT/बँकिंग सेवा; ओव्हरड्राफ्ट अटींवर.",
+          "eligibility": "पात्र व्यक्ती ज्यांच्याकडे योग्य मूलभूत बँक खाते नाही, बँक/KYC नियमांनुसार.",
+          "requiredDocuments": [
+            "आधार किंवा स्वीकार्य KYC कागदपत्र",
+            "पत्त्याचा पुरावा",
+            "मोबाइल क्रमांक"
+          ],
+          "applicationProcess": "सहभागी बँक किंवा अधिकृत बँकिंग माध्यमातून पात्र मूलभूत बचत खाते उघडा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री जन-धन योजना (PMJDY)",
+          "description": "बुनियादी बैंकिंग सेवाओं तक पहुँच देने वाली राष्ट्रीय वित्तीय समावेशन योजना।",
+          "benefits": "बुनियादी बैंक खाता, RuPay डेबिट कार्ड और पात्रता के अनुसार DBT/बैंकिंग सेवाएँ; ओवरड्राफ्ट शर्तों के अधीन।",
+          "eligibility": "पात्र व्यक्ति जिनके पास उपयुक्त बुनियादी बैंक खाता नहीं है, बैंक/KYC नियमों के अनुसार।",
+          "requiredDocuments": [
+            "आधार या स्वीकार्य KYC दस्तावेज",
+            "पते का प्रमाण",
+            "मोबाइल नंबर"
+          ],
+          "applicationProcess": "भाग लेने वाले बैंक या अधिकृत बैंकिंग माध्यम से पात्र बेसिक सेविंग्स खाता खोलें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_b5163dcb-87f7-4071-bd18-9579796b3147",
+      "name": "Post-Matric Scholarship – Maharashtra (VJNT)",
+      "description": "Scholarship support for eligible VJNT students pursuing post-matric education in Maharashtra.",
+      "benefits": "Eligible tuition/exam fee support and maintenance allowance as prescribed by the scheme.",
+      "eligibility": "Maharashtra residents belonging to VJNT category who meet the scheme income, course and other conditions.",
+      "requiredDocuments": [
+        "Caste certificate",
+        "Income certificate",
+        "Marks sheet",
+        "Aadhaar/bank details",
+        "Other documents as required"
+      ],
+      "applicationProcess": "Register/login on Maharashtra MahaDBT, complete the profile and apply for the eligible scholarship.",
+      "applicationLink": "https://mahadbt.maharashtra.gov.in/",
+      "targetCategory": [
+        "Students"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Post-Matric Scholarship – Maharashtra (VJNT)",
+          "description": "Scholarship support for eligible VJNT students pursuing post-matric education in Maharashtra.",
+          "benefits": "Eligible tuition/exam fee support and maintenance allowance as prescribed by the scheme.",
+          "eligibility": "Maharashtra residents belonging to VJNT category who meet the scheme income, course and other conditions.",
+          "requiredDocuments": [
+            "Caste certificate",
+            "Income certificate",
+            "Marks sheet",
+            "Aadhaar/bank details",
+            "Other documents as required"
+          ],
+          "applicationProcess": "Register/login on Maharashtra MahaDBT, complete the profile and apply for the eligible scholarship."
+        },
+        "mr": {
+          "name": "मॅट्रिकोत्तर शिष्यवृत्ती – महाराष्ट्र (VJNT)",
+          "description": "महाराष्ट्रातील पात्र VJNT विद्यार्थ्यांना मॅट्रिकोत्तर शिक्षणासाठी शिष्यवृत्ती व शुल्क सहाय्य देणारी योजना.",
+          "benefits": "योजनेनुसार पात्र शिक्षण/परीक्षा शुल्क आणि निर्वाह भत्ता.",
+          "eligibility": "महाराष्ट्रातील VJNT प्रवर्गातील विद्यार्थी, उत्पन्न, अभ्यासक्रम आणि इतर अटी पूर्ण करणारे.",
+          "requiredDocuments": [
+            "जात प्रमाणपत्र",
+            "उत्पन्न प्रमाणपत्र",
+            "गुणपत्रिका",
+            "आधार/बँक तपशील",
+            "आवश्यक इतर कागदपत्रे"
+          ],
+          "applicationProcess": "MahaDBT वर नोंदणी/लॉगिन करून प्रोफाइल पूर्ण करा आणि पात्र शिष्यवृत्तीला अर्ज करा."
+        },
+        "hi": {
+          "name": "पोस्ट-मैट्रिक छात्रवृत्ति – महाराष्ट्र (VJNT)",
+          "description": "महाराष्ट्र के पात्र VJNT विद्यार्थियों को पोस्ट-मैट्रिक शिक्षा के लिए छात्रवृत्ति और शुल्क सहायता देने वाली योजना।",
+          "benefits": "योजना के अनुसार पात्र शिक्षा/परीक्षा शुल्क और रखरखाव भत्ता।",
+          "eligibility": "महाराष्ट्र के VJNT वर्ग के विद्यार्थी जो आय, पाठ्यक्रम और अन्य शर्तें पूरी करते हों।",
+          "requiredDocuments": [
+            "जाति प्रमाणपत्र",
+            "आय प्रमाणपत्र",
+            "अंकपत्र",
+            "आधार/बैंक विवरण",
+            "अन्य आवश्यक दस्तावेज"
+          ],
+          "applicationProcess": "MahaDBT पर पंजीकरण/लॉगिन करके प्रोफाइल पूरी करें और पात्र छात्रवृत्ति के लिए आवेदन करें."
+        }
+      }
+    },
+    {
+      "_id": "scheme_7cae8db5-378a-47d1-ad14-274e5cec10c2",
+      "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+      "description": "Maternity benefit programme providing financial assistance to eligible pregnant and lactating women.",
+      "benefits": "Maternity benefit paid according to the current scheme provisions and eligibility conditions.",
+      "eligibility": "Eligible pregnant and lactating women meeting the current PMMVY criteria.",
+      "requiredDocuments": [
+        "Aadhaar card",
+        "Bank/post-office account details",
+        "Pregnancy/child-related documents",
+        "Other documents as required"
+      ],
+      "applicationProcess": "Apply through the Anganwadi centre/approved implementing channel or official PMMVY system.",
+      "applicationLink": "https://pmmvy.wcd.gov.in/",
+      "targetCategory": [
+        "Women",
+        "Health"
+      ],
+      "isActive": true,
+      "translations": {
+        "en": {
+          "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+          "description": "Maternity benefit programme providing financial assistance to eligible pregnant and lactating women.",
+          "benefits": "Maternity benefit paid according to the current scheme provisions and eligibility conditions.",
+          "eligibility": "Eligible pregnant and lactating women meeting the current PMMVY criteria.",
+          "requiredDocuments": [
+            "Aadhaar card",
+            "Bank/post-office account details",
+            "Pregnancy/child-related documents",
+            "Other documents as required"
+          ],
+          "applicationProcess": "Apply through the Anganwadi centre/approved implementing channel or official PMMVY system."
+        },
+        "mr": {
+          "name": "प्रधानमंत्री मातृ वंदना योजना (PMMVY)",
+          "description": "पात्र गर्भवती व स्तनदा महिलांना मातृत्व काळात आर्थिक सहाय्य देणारी योजना.",
+          "benefits": "पहिल्या अपत्यासाठी अटी पूर्ण केल्यास ₹5,000 दोन हप्त्यांत आणि 1 एप्रिल 2022 नंतर दुसरे अपत्य मुलगी असल्यास अटींनुसार ₹6,000 एकरकमी लाभ.",
+          "eligibility": "PMMVY च्या सध्याच्या निकषांनुसार पात्र गर्भवती व स्तनदा महिला.",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "बँक/पोस्ट ऑफिस खाते तपशील",
+            "गर्भधारणा/बालक संबंधित कागदपत्रे",
+            "इतर आवश्यक कागदपत्रे"
+          ],
+          "applicationProcess": "अंगणवाडी केंद्र/मान्यताप्राप्त आरोग्य किंवा अधिकृत PMMVY प्रणालीमार्फत अर्ज करा."
+        },
+        "hi": {
+          "name": "प्रधानमंत्री मातृ वंदना योजना (PMMVY)",
+          "description": "पात्र गर्भवती और स्तनपान कराने वाली महिलाओं को मातृत्व अवधि में वित्तीय सहायता देने वाली योजना।",
+          "benefits": "पहले बच्चे के लिए शर्तें पूरी होने पर ₹5,000 दो किस्तों में और 1 अप्रैल 2022 के बाद दूसरे बच्चे के लड़की होने पर शर्तों के अनुसार ₹6,000 एकमुश्त।",
+          "eligibility": "PMMVY के वर्तमान मानदंडों के अनुसार पात्र गर्भवती और स्तनपान कराने वाली महिलाएँ।",
+          "requiredDocuments": [
+            "आधार कार्ड",
+            "बैंक/डाकघर खाते का विवरण",
+            "गर्भावस्था/बच्चे से संबंधित दस्तावेज",
+            "अन्य आवश्यक दस्तावेज"
+          ],
+          "applicationProcess": "आंगनवाड़ी केंद्र/मान्य स्वास्थ्य माध्यम या आधिकारिक PMMVY प्रणाली के माध्यम से आवेदन करें."
+        }
+      }
+    }
+  ],
+  "complaints": [
+    {
+      "_id": "cmp_17e04d3d-a220-4b10-889a-43d62d87a1f8",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Damaged road near village school",
+      "category": "Roads",
+      "description": "The road near the village school has several potholes and becomes difficult to use, especially during the rainy season. It is causing problems for students, farmers, and other villagers. Kindly arrange for repair of the road.",
+      "location": "near village school",
+      "imageUrl": "",
+      "status": "Resolved",
+      "adminNotes": "",
+      "createdAt": "2026-09-08T05:54:35.615Z",
+      "resolvedAt": "2026-09-12T06:14:29.940Z"
+    }
+  ],
+  "announcements": [
+    {
+      "_id": "ann_d3663d21-f70e-420a-85df-fdb250a2b99b",
+      "title": "Gram Sabha Meeting",
+      "message": "Gram Sabha meeting will be held on 15th September at 10 AM in the village panchayat office.",
+      "location": "Rampur",
+      "publishedBy": "usr_c3cc6a3e-e6ac-40ba-8d03-b464428f5534",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    },
+    {
+      "_id": "ann_afeb4373-584d-4767-b574-8b092a219efd",
+      "title": "Village Service Camp",
+      "message": "A public service help desk will be available at the Gram Panchayat office this week.",
+      "location": "All villages",
+      "publishedBy": "usr_c3cc6a3e-e6ac-40ba-8d03-b464428f5534",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    }
+  ],
+  "alerts": [
+    {
+      "_id": "alert_eb51bf8f-16d2-435b-aa0b-2c92b5908af7",
+      "title": "Heavy Rainfall Warning",
+      "message": "Heavy rainfall is expected. Farmers should protect ready crops and follow local advisories.",
+      "location": "Jaipur",
+      "severity": "High",
+      "type": "Weather",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    }
+  ],
+  "agriculture": [
+    {
+      "_id": "agri_74dbd47c-d339-47eb-8e9d-e6e6805486a5",
+      "title": "Wheat Cultivation Guide - Rabi Season",
+      "crop": "Wheat",
+      "season": "Rabi",
+      "content": "Sowing is generally done in October-November. Use suitable soil, timely irrigation and recommended seed varieties.",
+      "category": "Crop info",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    },
+    {
+      "_id": "agri_6a5cf552-28be-4014-b9e6-b57edaffbb71",
+      "title": "Pest Control in Cotton",
+      "crop": "Cotton",
+      "season": "Kharif",
+      "content": "Use integrated pest management and avoid unnecessary pesticide use. Monitor crops regularly.",
+      "category": "Pest/disease",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    }
+  ],
+  "market": [
+    {
+      "_id": "market_dafaf0c3-fbc9-4de5-8259-22cd54926168",
+      "crop": "Wheat",
+      "market": "Rampur Mandi",
+      "price": 2100,
+      "unit": "Rs/quintal",
+      "location": "Jaipur",
+      "date": "2026-09-08T05:49:43.751Z",
+      "source": "Local demo dataset"
+    },
+    {
+      "_id": "market_3defad38-7ac6-4a9f-a966-82df1049293b",
+      "crop": "Rice",
+      "market": "Jaipur APMC",
+      "price": 3200,
+      "unit": "Rs/quintal",
+      "location": "Jaipur",
+      "date": "2026-09-08T05:49:43.751Z",
+      "source": "Local demo dataset"
+    }
+  ],
+  "opportunities": [
+    {
+      "_id": "opp_18be1a72-98b4-4b91-a0ff-afb68e6f527d",
+      "title": "Agriculture Skill Development Program",
+      "type": "Training",
+      "description": "Free training on modern farming techniques and organic cultivation.",
+      "organization": "State Agriculture Department",
+      "location": "District Center",
+      "eligibility": "Farmers aged 18-45",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    },
+    {
+      "_id": "opp_18565525-b2ac-40db-9bd4-0bd36eeb01cf",
+      "title": "Rural Self Employment Training",
+      "type": "Skill development",
+      "description": "Training for setting up small businesses in rural areas with bank linkage.",
+      "organization": "NABARD",
+      "location": "District Center",
+      "eligibility": "Rural youth 18-35 years",
+      "isActive": true,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    }
+  ],
+  "notifications": [
+    {
+      "_id": "ntf_cdb6b124-ea94-42e6-974e-04730d11a5cf",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Welcome to Rural Connect",
+      "message": "You can use this portal to explore schemes, report local issues and view rural opportunities.",
+      "type": "System",
+      "isRead": false,
+      "createdAt": "2026-09-08T05:49:43.751Z"
+    },
+    {
+      "_id": "ntf_4a2080fb-1d3a-440c-b4af-1764e3f99f69",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Complaint Status Updated",
+      "message": "Your complaint \"Damaged road near village school\" status is now: Submitted",
+      "type": "Complaint update",
+      "relatedComplaintId": "cmp_17e04d3d-a220-4b10-889a-43d62d87a1f8",
+      "isRead": false,
+      "createdAt": "2026-09-08T05:59:01.716Z"
+    },
+    {
+      "_id": "ntf_a8c10ad6-330b-46a1-af62-ea70750a041f",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Vehicle booking submitted",
+      "message": "Your booking for MH15AB1234 is pending admin confirmation.",
+      "type": "Fleet",
+      "isRead": false,
+      "createdAt": "2026-09-11T07:55:34.979Z"
+    },
+    {
+      "_id": "ntf_f35d8493-76a2-4b06-b19c-9cec6f77c650",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Vehicle booking confirmed",
+      "message": "Your booking for MH15AB1234 is confirmed. The vehicle is now marked On Trip.",
+      "type": "Fleet",
+      "isRead": false,
+      "createdAt": "2026-09-11T08:31:27.542Z"
+    },
+    {
+      "_id": "ntf_53e3e0d0-75d6-4da0-a72b-ad226af25107",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Vehicle booking confirmed",
+      "message": "Your booking for MH15AB1236 is confirmed. The vehicle is now marked On Trip.",
+      "type": "Fleet",
+      "isRead": false,
+      "createdAt": "2026-09-11T08:31:50.710Z"
+    },
+    {
+      "_id": "ntf_36bd8424-3b0c-4d5b-8bfd-322251df204a",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Vehicle booking Completed",
+      "message": "Your booking for MH15AB1234 is now Completed.",
+      "type": "Fleet",
+      "isRead": false,
+      "createdAt": "2026-09-11T08:32:19.011Z"
+    },
+    {
+      "_id": "ntf_c082c8da-89c1-4f27-aefb-d864278421e7",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Vehicle booking Cancelled",
+      "message": "Your booking for MH15AB1236 is now Cancelled.",
+      "type": "Fleet",
+      "isRead": false,
+      "createdAt": "2026-09-12T06:12:34.659Z"
+    },
+    {
+      "_id": "ntf_a13a61ad-2b86-4b20-9ce9-b336c06a8dd6",
+      "user": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "title": "Complaint Status Updated",
+      "message": "Your complaint \"Damaged road near village school\" status is now: Resolved",
+      "type": "Complaint update",
+      "relatedComplaintId": "cmp_17e04d3d-a220-4b10-889a-43d62d87a1f8",
+      "isRead": false,
+      "createdAt": "2026-09-12T06:14:29.940Z"
+    }
+  ],
+  "vehicles": [
+    {
+      "_id": "veh_demo_001",
+      "vehicleNumber": "MH15AB1234",
+      "type": "Service Van",
+      "model": "Mahindra Bolero",
+      "driverName": "Ramesh Patil",
+      "location": "Nashik",
+      "status": "Available",
+      "updatedAt": "2026-09-11T08:32:19.011Z"
+    },
+    {
+      "_id": "vehicle_5ad1513e-2928-46b4-b9a1-a77ab0f83fcb",
+      "vehicleNumber": "MH15AB1236",
+      "type": "Agriculture Support",
+      "model": "Eicher",
+      "driverName": "Raghav wagh",
+      "location": "Nashik",
+      "status": "Available",
+      "createdAt": "2026-09-11T08:30:46.119Z",
+      "updatedAt": "2026-09-12T06:12:34.655Z"
+    }
+  ],
+  "drivers": [
+    {
+      "_id": "drv_demo_001",
+      "name": "Ramesh Patil",
+      "phone": "9876500001",
+      "licenseNumber": "MH15-2020-001",
+      "vehicleId": "veh_demo_001",
+      "status": "Active"
+    }
+  ],
+  "trips": [],
+  "maintenance": [],
+  "fuelRecords": [],
+  "bookings": [
+    {
+      "_id": "booking_9b4b9a4b-89fe-4e18-83ad-6d34f03550cd",
+      "userId": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "userName": "Ramesh Kumar",
+      "userPhone": "9876543210",
+      "vehicleId": "veh_demo_001",
+      "vehicleNumber": "MH15AB1234",
+      "vehicleType": "Service Van",
+      "purpose": "agriculture support",
+      "bookingDate": "2026-09-11",
+      "bookingTime": "15:03",
+      "notes": "",
+      "status": "Completed",
+      "createdAt": "2026-09-11T08:31:27.542Z",
+      "updatedAt": "2026-09-11T08:32:19.011Z"
+    },
+    {
+      "_id": "booking_e7883fae-6199-41ec-a1f7-409ea7106fd7",
+      "userId": "usr_ccb505d2-c8f3-443d-bddc-b71d49421757",
+      "userName": "Ramesh Kumar",
+      "userPhone": "9876543210",
+      "vehicleId": "vehicle_5ad1513e-2928-46b4-b9a1-a77ab0f83fcb",
+      "vehicleNumber": "MH15AB1236",
+      "vehicleType": "Agriculture Support",
+      "purpose": "village support",
+      "bookingDate": "2026-09-11",
+      "bookingTime": "15:04",
+      "notes": "",
+      "status": "Cancelled",
+      "createdAt": "2026-09-11T08:31:50.710Z",
+      "updatedAt": "2026-09-12T06:12:34.655Z"
+    }
+  ]
+}
