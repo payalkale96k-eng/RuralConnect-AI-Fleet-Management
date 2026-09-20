@@ -93,12 +93,31 @@ function verifyToken(token) {
   if (!data.exp || data.exp < Math.floor(Date.now()/1000)) throw new Error('Expired token');
   return data;
 }
-function send(res,status,data,extra={}) {
-  const body=Buffer.from(typeof data==='string'?data:JSON.stringify(data));
-  res.writeHead(status,{'Content-Type':typeof data==='string'?'text/plain; charset=utf-8':'application/json; charset=utf-8',
-    'Content-Length':body.length,'Cache-Control':'no-store','Access-Control-Allow-Origin':'*',...extra});
+function send(res, status, data, extra = {}) {
+  const body = Buffer.from(
+    typeof data === 'string' ? data : JSON.stringify(data)
+  );
+
+  res.writeHead(status, {
+    'Content-Type':
+      typeof data === 'string'
+        ? 'text/plain; charset=utf-8'
+        : 'application/json; charset=utf-8',
+
+    'Content-Length': body.length,
+    'Cache-Control': 'no-store',
+
+    // CORS
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+
+    ...extra
+  });
+
   res.end(body);
 }
+
 function redirect(res,location){res.writeHead(302,{Location:location,'Access-Control-Allow-Origin':'*'});res.end();}
 function parseBody(req) {
   return new Promise((resolve,reject)=>{
